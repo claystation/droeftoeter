@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
+import { SlashCommandBuilder, SlashCommandStringOption } from '@discordjs/builders';
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
 import dotenv from 'dotenv';
@@ -9,6 +9,8 @@ const commands = [
 	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
 	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
 	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+	new SlashCommandBuilder().setName('join').setDescription('Joins the voice channel!'),
+	new SlashCommandBuilder().setName('play').setDescription('Plays a song!').addStringOption(new SlashCommandStringOption().setName("song").setDescription("Song Youtube URL").setRequired(true)),
 ]
 	.map(command => command.toJSON());
 
