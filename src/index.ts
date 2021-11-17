@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 const disc = new Discord.Client({
-    intents: [Intents.FLAGS.GUILD_VOICE_STATES]
+    intents: [Intents.FLAGS.GUILDS]
 });
 
 disc.on('ready', () => {
