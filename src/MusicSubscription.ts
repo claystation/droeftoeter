@@ -131,4 +131,12 @@ export class MusicSubscription {
 			return this.processQueue();
 		}
 	}
+
+	public nowPlaying() {
+		if(this.queue.length === 0) {
+			return "Nothing!"
+		} else {
+			return this.queue[0].title
+		}
+	}
 }

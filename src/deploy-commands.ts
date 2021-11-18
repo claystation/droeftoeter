@@ -9,10 +9,15 @@ const commands = [
 	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
 	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
 	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
-	new SlashCommandBuilder().setName('join').setDescription('Joins the voice channel!'),
-	new SlashCommandBuilder().setName('play').setDescription('Plays a song!').addStringOption(new SlashCommandStringOption().setName("song").setDescription("Song Youtube URL").setRequired(true)),
-]
-	.map(command => command.toJSON());
+	new SlashCommandBuilder().setName('play')
+		.setDescription('Plays a song!')
+		.addStringOption(new SlashCommandStringOption()
+			.setName("song")
+			.setDescription("Song Youtube URL")
+			.setRequired(true)
+		),
+	new SlashCommandBuilder().setName('np').setDescription('Display what is playing currently!'),
+].map(command => command.toJSON());
 
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
