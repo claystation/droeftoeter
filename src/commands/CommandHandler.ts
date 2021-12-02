@@ -6,14 +6,16 @@ class CommandHandler {
     commandsMap = new Map<String, ICommand>();
 
     constructor(){
-        this.registerCommands();
+
     }
 
-    private registerCommands() {
-        this.commandsMap.set("play", new PlayCommand())
+    public registerCommands(commands: Map<String,ICommand>) {
+        this.commandsMap = commands;
     }
 
     public runCommand(commandName: string) {
         this.commandsMap.get(commandName).run();
     }
 }
+
+export default CommandHandler
