@@ -19,11 +19,14 @@
     "ytdl-core": "^4.9.1"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "eslint": "^8.2.0",
-    "typescript": "^4.4.4"
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
   },
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "deploy-commands": "tsc && node dist/deploy-commands.js"
+    "deploy-commands": "tsc && node dist/deploy-commands.js",
+    "test": "jest"
   }
 }
